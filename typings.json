@@ -1,0 +1,22 @@
+{
+  "dependencies": {},
+  "globalDependencies": {
+    "lodash": "registry:dt/lodash#3.10.0+20160720001309",
+    "react": "registry:dt/react#0.14.0+20160630100702",
+    "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
+    "react-ga": "registry:dt/react-ga#1.4.1+20160524135221",
+    "react-helmet": "registry:dt/react-helmet#0.0.0+20160619032521",
+    "react-redux": "registry:dt/react-redux#4.4.0+20160724070751",
+    "react-router": "registry:dt/react-router#2.0.0+20160621215300",
+    "react-router/history": "registry:dt/react-router/history#2.0.0+20160608102730",
+    "redux": "registry:dt/redux#3.5.2+20160703092728",
+    "redux-devtools": "registry:dt/redux-devtools#3.0.0+20160703120921",
+    "redux-devtools-dock-monitor": "registry:dt/redux-devtools-dock-monitor#1.0.1+20151216103641",
+    "redux-devtools-log-monitor": "registry:dt/redux-devtools-log-monitor#1.0.1+20151216103641",
+    "redux-logger": "registry:dt/redux-logger#2.6.0+20160619033847",
+    "redux-saga": "registry:dt/redux-saga#0.9.1+20160703120921",
+    "source-map": "registry:dt/source-map#0.0.0+20160317120654",
+    "uglify-js": "registry:dt/uglify-js#2.6.1+20160316155526",
+    "webpack": "registry:dt/webpack#1.12.9+20160523035535"
+  }
+}
