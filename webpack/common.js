@@ -68,12 +68,12 @@ fs.readdirSync('node_modules')
 module.exports = {
     buildPath: buildPath,
     loaders: commonLoaders,
-    externals: externals,
+    externals: [],//externals,
     resolve: {
         extensions: ['', '.ts','.tsx', '.js'],
         modulesDirectories: ["src", "node_modules"]
     },
-    publicPath: '/assets/',
+    publicPath: '/assets',
     postcss: postCss,
     ExtractTextPlugin: ExtractTextPlugin
 };
