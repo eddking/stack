@@ -2,6 +2,9 @@
 var webpack = require('webpack');
 var common = require('./common.js');
 
+var path = require('path');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
+
 module.exports = {
     name: 'production',
     devtool: 'cheap-module-source-map',
@@ -20,6 +23,9 @@ module.exports = {
     externals: common.externals,
     postcss: common.postcss,
     plugins: [
+        new CleanWebpackPlugin([common.buildPath], {
+            root: path.resolve(__dirname, "..")
+        }),
         new webpack.DefinePlugin({
             __DEVELOPMENT__: false,
         }),
