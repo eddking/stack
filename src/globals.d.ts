@@ -7,6 +7,9 @@ declare interface NodeModule {
         dispose: (callback: (data: any) => void) => void;
         addDisposeHandler: (callback: (data: any) => void) => void;
         removeDisposeHandler: (callback: (data: any) => void) => void;
+        data: {
+            [key: string]: any
+        };
 
     };
 }

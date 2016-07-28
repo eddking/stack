@@ -9,6 +9,7 @@ module.exports = {
     name: 'production',
     devtool: 'cheap-module-source-map',
     entry: [
+        'babel-polyfill',
         './src/app.ts'
     ],
     output: {

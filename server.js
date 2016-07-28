@@ -11,7 +11,6 @@ if (process.env.NODE_ENV === 'development') {
     var compiler = webpack(config);
 
     app.use(webpackDevMiddleware(compiler, {
-        hot: true,
         publicPath: config.publicPath,
         stats: {colors: true}
     }));
@@ -24,10 +23,11 @@ if (process.env.NODE_ENV === 'development') {
     app.use('/assets', express.static('build'));
 }
 
-app.get("/", function (req, resp) {
+app.get("*", function (req, resp) {
     var html = '<html>\
     <head></head>\
     <body>\
+        <div id="root"></div>\
         <script type="text/javascript" src="/assets/app.js"></script>\
     </body>\
     </html>';

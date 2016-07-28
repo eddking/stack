@@ -5,6 +5,7 @@ module.exports = {
     name: 'development',
     devtool: 'cheap-module-eval-source-map',
     entry: [
+        'babel-polyfill',
         'webpack-hot-middleware/client?dynamicPublicPath=true&path=/__webpack_hmr',
         './src/app.ts',
     ],
