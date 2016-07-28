@@ -16,4 +16,5 @@ declare interface NodeModule {
 
 //globals
 declare var __DEVELOPMENT__: boolean;
+declare var __DEVTOOLS__: boolean;
 declare var __webpack_public_path__: string;

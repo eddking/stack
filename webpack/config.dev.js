@@ -23,6 +23,7 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             __DEVELOPMENT__: true,
+            __DEVTOOLS__: false
         }),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),

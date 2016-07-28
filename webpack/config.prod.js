@@ -29,6 +29,7 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             __DEVELOPMENT__: false,
+            __DEVTOOLS__: false
         }),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),

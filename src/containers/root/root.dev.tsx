@@ -17,7 +17,7 @@ export default class Root extends Component<RootProps, {}> {
             <Provider store={store}>
                 <div>
                     <Router history={history} routes={routes} />
-                    <DevTools/>
+                    { __DEVTOOLS__ ? <DevTools/> : null }
                 </div>
             </Provider>
         );
