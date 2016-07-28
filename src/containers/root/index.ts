@@ -10,7 +10,4 @@ export interface RootProps {
     routes: JSX.Element;
 };
 
-// export abstract class RootClass extends Component<RootProps, {}> {
-// }
-
 export const Root = __DEVELOPMENT__ ? require('./root.dev').default : require('./root.prod').default as ComponentClass<RootProps>;
