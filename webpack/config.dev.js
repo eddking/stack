@@ -26,6 +26,9 @@ module.exports = {
             __DEVTOOLS__: false
         }),
         new webpack.optimize.OccurenceOrderPlugin(),
+        new common.ExtractTextPlugin('styles/main.css', {
+            disable: true
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
     ]

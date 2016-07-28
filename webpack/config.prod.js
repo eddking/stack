@@ -33,7 +33,9 @@ module.exports = {
         }),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
-        new common.ExtractTextPlugin('styles/main.css'),
+        new common.ExtractTextPlugin('styles/main.css', {
+            disable: false
+        }),
         new webpack.optimize.UglifyJsPlugin({
             compressor: {
                 warnings: false

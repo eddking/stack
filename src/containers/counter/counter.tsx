@@ -2,6 +2,10 @@ import * as React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 
+const styles = require('../../styles/main.scss');
+
+console.log("styles", styles);
+
 interface CounterProps {
     value: number;
 }
@@ -9,7 +13,7 @@ interface CounterProps {
 class CounterComponent extends Component<CounterProps, {}> {
     render() {
         return (
-            <div>
+            <div className={styles.test}>
                 { this.props.value }
             </div>
         )

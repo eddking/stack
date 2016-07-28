@@ -38,7 +38,7 @@ var commonLoaders = [
         test: /\.(scss|sass)$/,
         loader: ExtractTextPlugin.extract(
             'style-loader',
-            ['css-loader?sourceMap', 'postcss-loader', 'sass-loader?sourceMap'])
+            ['css-loader?modules&sourceMap', 'postcss-loader', 'sass-loader?sourceMap'])
     }
 ];
 
