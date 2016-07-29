@@ -44,6 +44,7 @@ var commonLoaders = [
 
 function postCss() {
     return [
+        require('postcss-normalize'),
         require('postcss-cssnext')({
             browsers: ['last 2 versions', 'IE > 8']
         })

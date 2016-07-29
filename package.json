@@ -29,6 +29,7 @@
     "postcss": "^5.1.0",
     "postcss-cssnext": "^2.7.0",
     "postcss-loader": "^0.9.1",
+    "postcss-normalize": "^0.3.0",
     "pretty-error": "^2.0.0",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
