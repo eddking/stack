@@ -1,5 +1,4 @@
 
-
 # Stack
 
 An experimental stack for single page apps
@@ -15,8 +14,13 @@ An experimental stack for single page apps
 #### Back-end:
 
 - Flask?
+- websockets for graphql query transport [Flask-SocketIO](https://github.com/miguelgrinberg/Flask-SocketIO)
 - graphql endpoint [graphene](https://github.com/graphql-python/graphene/)
 
 #### Database:
 
-- Posgres container
+- Postgres
+
+#### Other
+
+- [prerender](https://github.com/prerender/prerender) prerender the site for speed?
