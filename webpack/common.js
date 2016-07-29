@@ -50,25 +50,17 @@ function postCss() {
     ];
 }
 
-var externals = {};
-// A list of node_modules which we DO want to bundle with the main code
-var bundledModules = [
-];
-// list all node_modules, so they can be excluded from the build by default
-fs.readdirSync('node_modules')
-        .filter(function(x) {
-            return bundledModules.indexOf(x) === -1;
-        })
-        .filter(function(x) {
-            return ['.bin'].indexOf(x) === -1;
-        }).forEach(function(mod) {
-            externals[mod] = 'commonjs ' + mod;
-        });
+var externals = {
+    'react': 'React',
+    'react-dom': 'ReactDOM',
+    'lodash': '_',
+    'redux': 'Redux'
+}
 
 module.exports = {
     buildPath: buildPath,
     loaders: commonLoaders,
-    externals: [],//externals,
+    externals: externals,
     resolve: {
         extensions: ['', '.ts','.tsx', '.js'],
         modulesDirectories: ["src", "node_modules"]
