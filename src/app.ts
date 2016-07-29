@@ -36,8 +36,5 @@ ReactDOM.render(React.createElement(Root, {
 }), document.getElementById('root'))
 
 if (module.hot) {
-    module.hot.addDisposeHandler((data) => {
-        console.log("dispose handler data", data)
-    })
-    module.hot.accept();
+    module.hot.accept(); // errr wot.. pls dont shout warnings
 }

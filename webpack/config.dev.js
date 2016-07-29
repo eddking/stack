@@ -6,7 +6,7 @@ module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: [
         'babel-polyfill',
-        'webpack-hot-middleware/client?dynamicPublicPath=true&path=/__webpack_hmr',
+        'webpack-hot-middleware/client?dynamicPublicPath=true&path=/__webpack_hmr&reload=true',
         './src/app.ts',
     ],
     output: {
@@ -15,7 +15,11 @@ module.exports = {
     },
     resolve: common.resolve,
     module: {
-        loaders: common.loaders
+        loaders: common.javascriptPipeline([
+            common.loaders.reactHot,
+            common.loaders.babel,
+            common.loaders.typescript
+        ]).concat(common.commonLoaders)
     },
     publicPath: common.publicPath,
     externals: common.externals,

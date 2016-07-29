@@ -6,24 +6,34 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var buildPath = path.resolve(__dirname, "..", "build");
 
-var commonLoaders = [
-    {
+var babelLoader = {
+    loader: 'babel-loader',
+    query: {
+        presets: ['es2015'],
+        plugins: ['transform-decorators-legacy']
+    }
+};
+
+var reactHotLoader = {
+    loader: 'react-hot'
+};
+
+var typescriptLoader = {
+    loader: 'ts-loader'
+};
+
+// combine the selected loaders into one
+// in development we dont want to use the reac-hot
+function javascriptPipeline(loaders) {
+    return [{
         test: /\.tsx?$|\.js$/,
-        loader: combineLoaders([
-            {
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015'],
-                    plugins: ['transform-decorators-legacy']
-                }
-            },
-            {
-                loader: 'ts-loader'
-            }
-        ]),
+        loader: combineLoaders(loaders),
         include: path.join(__dirname, '..', 'src'),
         exclude: path.join(__dirname, '..', 'node_modules')
-    },
+    }];
+}
+
+var commonLoaders = [
     { test: /\.json$/, loader: 'json-loader' },
     { test: /\.html$/, loader: 'html-loader' },
     {
@@ -51,17 +61,26 @@ function postCss() {
     ];
 }
 
+// Currently not used.
+// we dont have the flexibility to make this work the dev tools
+// TODO: branch the config so this applies to produciton only
 var externals = {
     'react': 'React',
     'react-dom': 'ReactDOM',
     'lodash': '_',
     'redux': 'Redux'
-}
+};
 
 module.exports = {
     buildPath: buildPath,
-    loaders: commonLoaders,
-    externals: externals,
+    loaders: {
+        babel: babelLoader,
+        reactHot: reactHotLoader,
+        typescript: typescriptLoader
+    },
+    javascriptPipeline: javascriptPipeline,
+    commonLoaders: commonLoaders,
+    externals: [],
     resolve: {
         extensions: ['', '.ts','.tsx', '.js'],
         modulesDirectories: ["src", "node_modules"]

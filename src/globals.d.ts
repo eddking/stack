@@ -1,4 +1,9 @@
 
+//globals
+declare var __DEVELOPMENT__: boolean;
+declare var __DEVTOOLS__: boolean;
+declare var __webpack_public_path__: string;
+
 // Add hot module reloading
 declare interface NodeModule {
     hot?: {
@@ -14,7 +19,18 @@ declare interface NodeModule {
     };
 }
 
-//globals
-declare var __DEVELOPMENT__: boolean;
-declare var __DEVTOOLS__: boolean;
-declare var __webpack_public_path__: string;
+interface Styles {
+    [key: string]: boolean
+}
+interface StyleFunc {
+    (...args: (Styles|string|((Styles|string)[]))[]): string
+}
+
+declare namespace ReactRouter {
+    interface IndexRouteProps {
+        name?: string
+    }
+    interface RouteProps {
+        name?: string
+    }
+}

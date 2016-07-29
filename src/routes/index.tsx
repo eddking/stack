@@ -8,8 +8,12 @@ import { About } from '../containers/about/about'
 
 export const routes = (
     <Route path="/" component={App}>
-        <IndexRoute component={Home} />
-        <Route path="about" component={About}/>
+        <IndexRoute name="home" component={Home} />
+        <Route name="about" path="about" component={About}/>
         <Route path="*" component={NotFound}/>
     </Route>
 )
+
+if (module.hot) {
+    module.hot.accept();
+}

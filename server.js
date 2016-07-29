@@ -27,7 +27,6 @@ app.get("*", function (req, resp) {
     var html = '<html>\
     <head>\
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">\
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/g/lodash@4.14.0,react@15.2.1(react.min.js+react-dom.min.js),redux@3.5.2"></script>\
     </head>\
     <body>\
         <div id="root"></div>\

@@ -11,6 +11,16 @@ function counter(state = 0, action: {type: string}) {
   }
 }
 
+function router(state = {}, action: {type: string, state: any}) {
+  switch (action.type) {
+    case 'UPDATE_ROUTER_STATE':
+      return action.state
+  default:
+      return state;
+  }
+}
+
 export const rootReducer = combineReducers({
-    counter: counter
+    counter: counter,
+    router: router
 })

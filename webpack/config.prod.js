@@ -18,7 +18,10 @@ module.exports = {
     },
     resolve: common.resolve,
     module: {
-        loaders: common.loaders
+        loaders: common.javascriptPipeline([
+            common.loaders.babel,
+            common.loaders.typescript
+        ]).concat(common.commonLoaders)
     },
     publicPath: common.publicPath,
     externals: common.externals,
