@@ -28,7 +28,7 @@ function javascriptPipeline(loaders) {
     return [{
         test: /\.tsx?$|\.js$/,
         loader: combineLoaders(loaders),
-        include: path.join(__dirname, '..', 'src'),
+        include: path.join(__dirname, '..', 'src/client'),
         exclude: path.join(__dirname, '..', 'node_modules')
     }];
 }
@@ -83,7 +83,7 @@ module.exports = {
     externals: [],
     resolve: {
         extensions: ['', '.ts','.tsx', '.js'],
-        modulesDirectories: ["src", "node_modules"]
+        modulesDirectories: ["src/client", "node_modules"]
     },
     publicPath: '/assets',
     postcss: postCss,

@@ -7,7 +7,7 @@ module.exports = {
     entry: [
         'babel-polyfill',
         'webpack-hot-middleware/client?dynamicPublicPath=true&path=/__webpack_hmr&reload=true',
-        './src/app.ts',
+        './src/client/app.ts',
     ],
     output: {
         path: common.buildPath,

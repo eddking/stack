@@ -10,7 +10,7 @@ module.exports = {
     devtool: 'cheap-module-source-map',
     entry: [
         'babel-polyfill',
-        './src/app.ts'
+        './src/client/app.ts'
     ],
     output: {
         path: common.buildPath,
