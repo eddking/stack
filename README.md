@@ -3,23 +3,29 @@
 
 An experimental stack for single page apps
 
+so far we have:
+
+* typescript
+* webpack + hot reload
+* react
+* redux
+* bourbon + sass + postcss + css modules
+* websocket connection to api server
+* server can listen to and fire redux actions
+
 ### Todo:
 
 #### Front-end:
 
-- [reselect](https://github.com/reactjs/reselect)
 - GraphQL + [cashay](https://github.com/mattkrick/cashay)
-- Sass + bourbon
 
 #### Back-end:
 
-- Flask?
-- websockets for graphql query transport [Flask-SocketIO](https://github.com/miguelgrinberg/Flask-SocketIO)
 - graphql endpoint [graphene](https://github.com/graphql-python/graphene/)
 
 #### Database:
 
-- Postgres
+- Postgres (in a container)
 
 #### Other
 
