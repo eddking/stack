@@ -1,4 +1,9 @@
 
+interface Action {
+    type: string;
+    server?: boolean; // whether this action was server initiated
+}
+
 export function incrementCounter() {
     return {type: 'INCREMENT'}
 }

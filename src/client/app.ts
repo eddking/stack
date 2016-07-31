@@ -8,6 +8,7 @@ import createSagaMiddleware from 'redux-saga'
 import { browserHistory } from 'react-router'
 import { rootSaga } from './sagas'
 import { rootReducer } from './reducers'
+import { Client } from './lib/api-client'
 import * as _ from 'lodash';
 
 const sagaMiddleware = createSagaMiddleware()
@@ -26,6 +27,8 @@ const store = createStore(
     rootReducer,
     compose.apply(compose, enhancers)
 )
+
+export const client = new Client(__DEVELOPMENT__ ? "localhost:9090":"stackedd.io", store)
 
 sagaMiddleware.run(rootSaga)
 
